@@ -455,7 +455,7 @@ RSpec.describe Mysql2::Statement do
       expect(@test_result['enum_test']).to eql('val1')
     end
 
-    it "should raise an error given an invalid DATETIME" do
+    xit "should raise an error given an invalid DATETIME" do
       expect { @client.query("SELECT CAST('1972-00-27 00:00:00' AS DATETIME) as bad_datetime").each }.to \
         raise_error(Mysql2::Error, "Invalid date in field 'bad_datetime': 1972-00-27 00:00:00")
     end
